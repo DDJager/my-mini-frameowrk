@@ -59,5 +59,52 @@
             "whoops",
             "zf2"
         ]
+    },
+    {
+        "name": "patricklouys/http",
+        "version": "v1.3.0",
+        "version_normalized": "1.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/PatrickLouys/http.git",
+            "reference": "d4acbd2838edfbe346ad0999fe55c9e8039e9b91"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/PatrickLouys/http/zipball/d4acbd2838edfbe346ad0999fe55c9e8039e9b91",
+            "reference": "d4acbd2838edfbe346ad0999fe55c9e8039e9b91",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "4.0.*"
+        },
+        "time": "2015-11-10 16:45:39",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Http\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Patrick Louys",
+                "email": "patrick@louys.ch",
+                "role": "Creator / Main Developer"
+            }
+        ],
+        "description": "HTTP Component",
+        "keywords": [
+            "http",
+            "request",
+            "response"
+        ]
     }
 ]

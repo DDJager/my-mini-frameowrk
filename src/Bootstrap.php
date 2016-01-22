@@ -27,3 +27,18 @@ if ($environment !== "production") {
     });
 }
 $whoops->register();
+
+
+/**
+* Patricklouys HTTP package
+*/
+
+$request = new \Http\HttpRequest($_GET, $_POST, $_COOKIE, $_FILES, $_SERVER); // Sets the $request object
+$response = new \Http\HttpResponse;	// Sets the $response object
+
+foreach ($response->getHeaders() as $header) {
+    header($header, false);
+}
+
+$response->setContent("ff");
+echo $response->getContent();
