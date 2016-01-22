@@ -1,0 +1,21 @@
+{
+    "name": "My mini framework",
+    "description": "You know, just a test",
+    "keywords": ["Framework", "Danny"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Danny",
+            "email": "danny-1995@live.nl",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Src\\": "src/"
+        }
+    }
+}
