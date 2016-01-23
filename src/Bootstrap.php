@@ -78,9 +78,12 @@ switch ($routeInfo[0]) {
 	 * If $routeInfo[0] is equal to the constant of \FastRoute\Dispatcher::FOUND = 1
 	 */
 	case \FastRoute\Dispatcher::FOUND:
-		$handler = $routeInfo[1];
+		$className = $routeInfo[1][0];
+		$method = $routeInfo[1][1];
         $vars = $routeInfo[2];
-        call_user_func($handler, $vars);
+
+        $object = new $className;
+        $object->$method($vars);
 		break;
 	/**
 	 * If $routeInfo[0] is equal to the constant of \FastRoute\Dispatcher::METHOD_NOT_ALLOWED = 2
