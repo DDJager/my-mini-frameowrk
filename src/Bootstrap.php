@@ -82,7 +82,7 @@ switch ($routeInfo[0]) {
 		$method = $routeInfo[1][1];
         $vars = $routeInfo[2];
 
-        $object = new $className;
+        $object = new $className($response);
         $object->$method($vars);
 		break;
 	/**

@@ -2,7 +2,7 @@
 
 namespace Src\Controllers;
 
-class About
+class About extends BaseController
 {
 	public function show()
 	{
