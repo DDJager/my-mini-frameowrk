@@ -98,7 +98,3 @@ switch ($routeInfo[0]) {
 
 echo $response->getContent();
 
-//$test = new \Mustache_Engine;
-//
-$test2 = new Template\MustacheRenderer(new \Mustache_Engine);
-
