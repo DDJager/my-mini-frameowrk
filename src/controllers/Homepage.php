@@ -4,9 +4,10 @@ namespace Src\Controllers;
 
 class Homepage extends BaseController
 {
-
 	public function show()
 	{
-		echo "Hello world from the homepage controller";
+		$data = ["name" => $this->request->getParameter("name", "stranger")];
+		$html = $this->renderer->render("Homepage", $data);
+        $this->response->setContent($html);
 	}
 }

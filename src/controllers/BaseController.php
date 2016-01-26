@@ -6,16 +6,35 @@ abstract class BaseController
 {
 	/**
 	 * \Http\Response object 
-	 * @var $response
+	 * 
+	 * @var Response
 	 */
 	protected $response;
 
 	/**
-	 * Constructs a dependecy injection of the Response interface
-	 * @param \Http\Response $response 	
+	 * \Http\Request object 
+	 * 
+	 * @var Request
 	 */
-	public function __construct(\Http\Response $response)
+	protected $request;
+
+	/**
+	 * \Src\Template\Renderer interface
+	 * 
+	 * @var Renderer
+	 */
+	protected $renderer;
+
+	/**
+	 * Constructs a dependecy injection
+	 * 
+	 * @param 	\Http\Response 	$response 	
+	 * @param 	\Http\Request   $request 	
+	 */
+	public function __construct(\Http\Response $response, \Http\Request $request, \Src\Template\Renderer $renderer)
 	{
 		$this->response = $response;
+		$this->request = $request;
+		$this->renderer = $renderer;
 	}
 }

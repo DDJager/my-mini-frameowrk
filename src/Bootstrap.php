@@ -33,8 +33,10 @@ $whoops->register();
 * Patricklouys HTTP package
 */
 
-$request = new \Http\HttpRequest($_GET, $_POST, $_COOKIE, $_FILES, $_SERVER); 	// Sets the $request object
-$response = new \Http\HttpResponse;												// Sets the $response object
+$injector = include("Dependencies.php");
+
+$request = $injector->make("\Http\HttpRequest"); 								// Sets the $request object
+$response =  $injector->make("\Http\HttpResponse");								// Sets the $response object
 
 $cookieBuilder = new \Http\CookieBuilder;										// Sets the CookieBuilder object
 $cookieBuilder->setDefaultSecure(false);										// Disable the secure flag because this is only an example
@@ -82,7 +84,7 @@ switch ($routeInfo[0]) {
 		$method = $routeInfo[1][1];
         $vars = $routeInfo[2];
 
-        $object = new $className($response);
+        $object = $injector->make($className);
         $object->$method($vars);
 		break;
 	/**
@@ -93,3 +95,10 @@ switch ($routeInfo[0]) {
         $response->setStatusCode(405);
 		break;
 }
+
+echo $response->getContent();
+
+//$test = new \Mustache_Engine;
+//
+$test2 = new Template\MustacheRenderer(new \Mustache_Engine);
+
