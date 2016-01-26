@@ -8,6 +8,6 @@ class Homepage extends BaseController
 	{
 		$data = ["name" => $this->request->getParameter("name", "stranger")];
 		$html = $this->renderer->render("Homepage", $data);
-        $this->response->setContent($html);
+    	$this->response->setContent($html);
 	}
 }
